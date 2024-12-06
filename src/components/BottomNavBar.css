@@ -1,0 +1,101 @@
+/* General Container Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+/* Bottom Navigation Styles */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Navigation Item Styles */
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #555555;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-item .icon {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.nav-item.active {
+  color: #007bff;
+  transform: scale(1.1); /* Slight zoom effect for active item */
+}
+
+.nav-item:hover {
+  color: #007bff;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Page Content */
+.page {
+  text-align: center;
+  width: 100%;
+}
+
+/* Dark Mode Support */
+body.dark-mode .bottom-nav {
+  background-color: #1a1a1a;
+  box-shadow: 0 -2px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav-item {
+  color: #cccccc;
+}
+
+body.dark-mode .nav-item.active {
+  color: #4caf50;
+}
+
+body.dark-mode .nav-item:hover {
+  color: #4caf50;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-item {
+    font-size: 0.8rem;
+  }
+  .nav-item .icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-item {
+    font-size: 0.7rem;
+  }
+  .nav-item .icon {
+    font-size: 1rem;
+  }
+}
